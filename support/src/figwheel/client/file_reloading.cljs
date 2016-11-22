@@ -465,7 +465,7 @@
          :current-url-length (count (truncate-url link-href))}))))
 
 (defn get-correct-link [f-data]
-  (when-let [res (first
+  (when-let [res (last
                   (sort-by
                    (fn [{:keys [match-length current-url-length]}]
                      (- current-url-length match-length))
